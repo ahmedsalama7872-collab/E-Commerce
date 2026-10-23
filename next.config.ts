@@ -1,9 +1,18 @@
 import type { NextConfig } from "next";
+import withFlowbiteReact from "flowbite-react/plugin/nextjs";
 
 const nextConfig: NextConfig = {
   /* config options here */
   experimental: {
     agentFeedback: true,
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "scontent.fcai19-1.fna.fbcdn.net",
+      },
+    ],
   },
   cacheComponents: true,
   partialPrefetching: true,
@@ -17,4 +26,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+export default withFlowbiteReact(nextConfig);
